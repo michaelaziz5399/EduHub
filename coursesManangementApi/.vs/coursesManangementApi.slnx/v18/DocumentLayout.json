@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\myTestProject\\test\\coursesManangementApi\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1DB9D878-E497-AF87-C9C1-BA0F7E336D36}|coursesManangementApi\\coursesManangementApi.csproj|d:\\mytestproject\\test\\coursesmanangementapi\\coursesmanangementapi\\models\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DB9D878-E497-AF87-C9C1-BA0F7E336D36}|coursesManangementApi\\coursesManangementApi.csproj|solutionrelative:coursesmanangementapi\\models\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DB9D878-E497-AF87-C9C1-BA0F7E336D36}|coursesManangementApi\\coursesManangementApi.csproj|d:\\mytestproject\\test\\coursesmanangementapi\\coursesmanangementapi\\dtos\\courseresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DB9D878-E497-AF87-C9C1-BA0F7E336D36}|coursesManangementApi\\coursesManangementApi.csproj|solutionrelative:coursesmanangementapi\\dtos\\courseresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DB9D878-E497-AF87-C9C1-BA0F7E336D36}|coursesManangementApi\\coursesManangementApi.csproj|d:\\mytestproject\\test\\coursesmanangementapi\\coursesmanangementapi\\controllers\\coursesmanagementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DB9D878-E497-AF87-C9C1-BA0F7E336D36}|coursesManangementApi\\coursesManangementApi.csproj|solutionrelative:coursesmanangementapi\\controllers\\coursesmanagementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DB9D878-E497-AF87-C9C1-BA0F7E336D36}|coursesManangementApi\\coursesManangementApi.csproj|d:\\mytestproject\\test\\coursesmanangementapi\\coursesmanangementapi\\controllers\\testcoursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DB9D878-E497-AF87-C9C1-BA0F7E336D36}|coursesManangementApi\\coursesManangementApi.csproj|solutionrelative:coursesmanangementapi\\controllers\\testcoursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DB9D878-E497-AF87-C9C1-BA0F7E336D36}|coursesManangementApi\\coursesManangementApi.csproj|d:\\mytestproject\\test\\coursesmanangementapi\\coursesmanangementapi\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DB9D878-E497-AF87-C9C1-BA0F7E336D36}|coursesManangementApi\\coursesManangementApi.csproj|solutionrelative:coursesmanangementapi\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CourseResponse.cs",
+              "DocumentMoniker": "D:\\myTestProject\\test\\coursesManangementApi\\coursesManangementApi\\Dtos\\CourseResponse.cs",
+              "RelativeDocumentMoniker": "coursesManangementApi\\Dtos\\CourseResponse.cs",
+              "ToolTip": "D:\\myTestProject\\test\\coursesManangementApi\\coursesManangementApi\\Dtos\\CourseResponse.cs",
+              "RelativeToolTip": "coursesManangementApi\\Dtos\\CourseResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T08:52:24.241Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Course.cs",
+              "DocumentMoniker": "D:\\myTestProject\\test\\coursesManangementApi\\coursesManangementApi\\Models\\Course.cs",
+              "RelativeDocumentMoniker": "coursesManangementApi\\Models\\Course.cs",
+              "ToolTip": "D:\\myTestProject\\test\\coursesManangementApi\\coursesManangementApi\\Models\\Course.cs",
+              "RelativeToolTip": "coursesManangementApi\\Models\\Course.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-15T14:29:47.05Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TestCourseController.cs",
+              "DocumentMoniker": "D:\\myTestProject\\test\\coursesManangementApi\\coursesManangementApi\\Controllers\\TestCourseController.cs",
+              "RelativeDocumentMoniker": "coursesManangementApi\\Controllers\\TestCourseController.cs",
+              "ToolTip": "D:\\myTestProject\\test\\coursesManangementApi\\coursesManangementApi\\Controllers\\TestCourseController.cs",
+              "RelativeToolTip": "coursesManangementApi\\Controllers\\TestCourseController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-15T14:48:36.291Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CoursesManagementController.cs",
+              "DocumentMoniker": "D:\\myTestProject\\test\\coursesManangementApi\\coursesManangementApi\\Controllers\\CoursesManagementController.cs",
+              "RelativeDocumentMoniker": "coursesManangementApi\\Controllers\\CoursesManagementController.cs",
+              "ToolTip": "D:\\myTestProject\\test\\coursesManangementApi\\coursesManangementApi\\Controllers\\CoursesManagementController.cs",
+              "RelativeToolTip": "coursesManangementApi\\Controllers\\CoursesManagementController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-15T14:47:25.264Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "D:\\myTestProject\\test\\coursesManangementApi\\coursesManangementApi\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "coursesManangementApi\\Data\\AppDbContext.cs",
+              "ToolTip": "D:\\myTestProject\\test\\coursesManangementApi\\coursesManangementApi\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "coursesManangementApi\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAABMAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T23:08:27.017Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
