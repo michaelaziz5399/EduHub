@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace coursesManangementApi.Models
 {
@@ -10,6 +11,7 @@ namespace coursesManangementApi.Models
         public int CourseId { get; set; }
 
         // Navigation properties
+        [JsonIgnore]
         public Course? Course { get; set; }
         public ICollection<Lesson> Lessons { get; set; } = new HashSet<Lesson>();
     }

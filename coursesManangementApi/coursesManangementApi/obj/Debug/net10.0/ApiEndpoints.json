@@ -1,15 +1,15 @@
 [
   {
-    "ContainingType": "coursesManangementApi.Controllers.TestCourseController",
+    "ContainingType": "coursesManangementApi.Controllers.CoursesManagementController",
     "Method": "GetAllCourses",
-    "RelativePath": "api/TestCourse",
+    "RelativePath": "api/CoursesManagement",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[coursesManangementApi.Models.Course, coursesManangementApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[coursesManangementApi.Dtos.CourseResponse, coursesManangementApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -20,16 +20,38 @@
     ]
   },
   {
-    "ContainingType": "coursesManangementApi.Controllers.WeatherForecastController",
-    "Method": "Get",
-    "RelativePath": "WeatherForecast",
+    "ContainingType": "coursesManangementApi.Controllers.CoursesManagementController",
+    "Method": "AddCourse",
+    "RelativePath": "api/CoursesManagement",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "courseDto",
+        "Type": "coursesManangementApi.Dtos.CreateCourseRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "coursesManangementApi.Controllers.CoursesManagementController",
+    "Method": "GetCourseById",
+    "RelativePath": "api/CoursesManagement/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[coursesManangementApi.WeatherForecast, coursesManangementApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "coursesManangementApi.Dtos.CourseResponse",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -37,7 +59,43 @@
         ],
         "StatusCode": 200
       }
+    ]
+  },
+  {
+    "ContainingType": "coursesManangementApi.Controllers.CoursesManagementController",
+    "Method": "DeleteCourse",
+    "RelativePath": "api/CoursesManagement/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
     ],
-    "EndpointName": "GetWeatherForecast"
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "coursesManangementApi.Controllers.CoursesManagementController",
+    "Method": "UpdateCourse",
+    "RelativePath": "api/CoursesManagement/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "courseDto",
+        "Type": "coursesManangementApi.Dtos.UpdateCourseRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

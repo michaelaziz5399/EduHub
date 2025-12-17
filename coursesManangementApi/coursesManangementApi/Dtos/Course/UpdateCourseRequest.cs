@@ -6,9 +6,11 @@
         public string Name { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
         public string Title { get; set; } = string.Empty;
-        public float Price { get; set; }
-        public float DiscountPrice { get; set; }
+        public decimal Price { get; set; }
+        public decimal DiscountPrice { get; set; }
+        public float DurationInHours { get; set; }
+        public string Level { get; set; } = string.Empty;
         public string Url { get; set; } = string.Empty;
-        public bool IsPublished { get; set; }
+        public int? InstructorId { get; set; }
     }
 }

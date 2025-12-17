@@ -13,10 +13,10 @@
     }
   ],
   "paths": {
-    "/api/TestCourse": {
+    "/api/CoursesManagement": {
       "get": {
         "tags": [
-          "TestCourse"
+          "CoursesManagement"
         ],
         "responses": {
           "200": {
@@ -26,7 +26,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Course"
+                    "$ref": "#/components/schemas/CourseResponse"
                   }
                 }
               },
@@ -34,7 +34,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Course"
+                    "$ref": "#/components/schemas/CourseResponse"
                   }
                 }
               },
@@ -42,50 +42,155 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Course"
+                    "$ref": "#/components/schemas/CourseResponse"
                   }
                 }
               }
             }
           }
         }
+      },
+      "post": {
+        "tags": [
+          "CoursesManagement"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCourseRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCourseRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCourseRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     },
-    "/WeatherForecast": {
+    "/api/CoursesManagement/{id}": {
       "get": {
         "tags": [
-          "WeatherForecast"
+          "CoursesManagement"
         ],
-        "operationId": "GetWeatherForecast",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "pattern": "^-?(?:0|[1-9]\\d*)$",
+              "type": [
+                "integer",
+                "string"
+              ],
+              "format": "int32"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK",
             "content": {
               "text/plain": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
-                  }
+                  "$ref": "#/components/schemas/CourseResponse"
                 }
               },
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
-                  }
+                  "$ref": "#/components/schemas/CourseResponse"
                 }
               },
               "text/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
-                  }
+                  "$ref": "#/components/schemas/CourseResponse"
                 }
               }
             }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "CoursesManagement"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "pattern": "^-?(?:0|[1-9]\\d*)$",
+              "type": [
+                "integer",
+                "string"
+              ],
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "CoursesManagement"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "pattern": "^-?(?:0|[1-9]\\d*)$",
+              "type": [
+                "integer",
+                "string"
+              ],
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateCourseRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateCourseRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateCourseRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
           }
         }
       }
@@ -130,10 +235,16 @@
             ]
           },
           "children": {
-            "$ref": "#/components/schemas//items/properties/instructor/properties/user/properties/studentProfile/properties/courseEnrollments/items/properties/student/properties/reviews/items/properties/course/properties/sections/items/properties/course/properties/categories/items/properties/parent/properties/children"
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Category"
+            }
           },
           "courses": {
-            "$ref": "#/components/schemas//items/properties/instructor/properties/user/properties/studentProfile/properties/courseEnrollments/items/properties/student/properties/reviews/items/properties/course/properties/sections/items/properties/course/properties/categories/items/properties/parent/properties/courses"
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Course"
+            }
           }
         }
       },
@@ -210,9 +321,86 @@
             ]
           },
           "sections": {
+            "$ref": "#/components/schemas/CourseResponse/properties/categories/items/properties/parent/properties/courses/items/properties/instructor/properties/user/properties/studentProfile/properties/courseEnrollments/items/properties/student/properties/reviews/items/properties/course/properties/sections"
+          },
+          "categories": {
+            "$ref": "#/components/schemas/CourseResponse/properties/categories/items/properties/parent/properties/courses/items/properties/instructor/properties/user/properties/studentProfile/properties/courseEnrollments/items/properties/student/properties/reviews/items/properties/course/properties/categories"
+          },
+          "enrollments": {
+            "$ref": "#/components/schemas/CourseResponse/properties/categories/items/properties/parent/properties/courses/items/properties/instructor/properties/user/properties/studentProfile/properties/courseEnrollments/items/properties/student/properties/reviews/items/properties/course/properties/enrollments"
+          },
+          "reviews": {
+            "$ref": "#/components/schemas/CourseResponse/properties/categories/items/properties/parent/properties/courses/items/properties/instructor/properties/user/properties/studentProfile/properties/courseEnrollments/items/properties/student/properties/reviews/items/properties/course/properties/reviews"
+          }
+        }
+      },
+      "CourseLevel": {
+        "type": "integer"
+      },
+      "CourseResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "price": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "discountPrice": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "durationInHours": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?(?:[eE][+-]?\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "float"
+          },
+          "level": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "instructor": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/InstructorDto"
+              }
+            ]
+          },
+          "sections": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Section"
+              "$ref": "#/components/schemas/SectionDto"
             }
           },
           "categories": {
@@ -220,23 +408,115 @@
             "items": {
               "$ref": "#/components/schemas/Category"
             }
+          }
+        }
+      },
+      "CreateCourseRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
           },
-          "enrollments": {
+          "description": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "price": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "discountPrice": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "durationInHours": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?(?:[eE][+-]?\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "float"
+          },
+          "level": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "instructorId": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "sections": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Enrollment"
-            }
-          },
-          "reviews": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Review"
+              "$ref": "#/components/schemas/CreateSectionDto"
             }
           }
         }
       },
-      "CourseLevel": {
-        "type": "integer"
+      "CreateLessonDto": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "videoURL": {
+            "type": "string"
+          },
+          "durationInMinutes": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?(?:[eE][+-]?\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "float"
+          },
+          "order": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          }
+        }
+      },
+      "CreateSectionDto": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "order": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "lessons": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateLessonDto"
+            }
+          }
+        }
       },
       "Enrollment": {
         "type": "object",
@@ -345,10 +625,15 @@
             ]
           },
           "courses": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Course"
-            }
+            "$ref": "#/components/schemas/CourseResponse/properties/categories/items/properties/parent/properties/courses/items/properties/instructor/properties/user/properties/instructorProfile/properties/courses"
+          }
+        }
+      },
+      "InstructorDto": {
+        "type": "object",
+        "properties": {
+          "fullName": {
+            "type": "string"
           }
         }
       },
@@ -405,6 +690,41 @@
                 "$ref": "#/components/schemas/Section"
               }
             ]
+          }
+        }
+      },
+      "LessonDto": {
+        "type": "object",
+        "properties": {
+          "lessonId": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "title": {
+            "type": "string"
+          },
+          "videoURL": {
+            "type": "string"
+          },
+          "durationInMinutes": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?(?:[eE][+-]?\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "float"
+          },
+          "order": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int32"
           }
         }
       },
@@ -507,20 +827,40 @@
             ],
             "format": "int32"
           },
-          "course": {
-            "oneOf": [
-              {
-                "type": "null"
-              },
-              {
-                "$ref": "#/components/schemas/Course"
-              }
-            ]
-          },
           "lessons": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Lesson"
+            }
+          }
+        }
+      },
+      "SectionDto": {
+        "type": "object",
+        "properties": {
+          "sectionId": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "title": {
+            "type": "string"
+          },
+          "order": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "lessons": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LessonDto"
             }
           }
         }
@@ -565,10 +905,68 @@
             }
           },
           "reviews": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Review"
-            }
+            "$ref": "#/components/schemas/CourseResponse/properties/categories/items/properties/parent/properties/courses/items/properties/instructor/properties/user/properties/studentProfile/properties/courseEnrollments/items/properties/student/properties/reviews"
+          }
+        }
+      },
+      "UpdateCourseRequest": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "price": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "discountPrice": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "durationInHours": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?(?:[eE][+-]?\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "float"
+          },
+          "level": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "instructorId": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "null",
+              "integer",
+              "string"
+            ],
+            "format": "int32"
           }
         }
       },
@@ -623,46 +1021,12 @@
             ]
           }
         }
-      },
-      "WeatherForecast": {
-        "type": "object",
-        "properties": {
-          "date": {
-            "type": "string",
-            "format": "date"
-          },
-          "temperatureC": {
-            "pattern": "^-?(?:0|[1-9]\\d*)$",
-            "type": [
-              "integer",
-              "string"
-            ],
-            "format": "int32"
-          },
-          "temperatureF": {
-            "pattern": "^-?(?:0|[1-9]\\d*)$",
-            "type": [
-              "integer",
-              "string"
-            ],
-            "format": "int32"
-          },
-          "summary": {
-            "type": [
-              "null",
-              "string"
-            ]
-          }
-        }
       }
     }
   },
   "tags": [
     {
-      "name": "TestCourse"
-    },
-    {
-      "name": "WeatherForecast"
+      "name": "CoursesManagement"
     }
   ]
 }

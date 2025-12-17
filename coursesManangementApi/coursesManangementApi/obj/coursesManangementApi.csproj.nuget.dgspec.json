@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\myTestProject\\test\\coursesManangementApi\\coursesManangementApi\\coursesManangementApi.csproj": {}
+    "D:\\myTestProject\\test\\EduHub\\coursesManangementApi\\coursesManangementApi\\coursesManangementApi.csproj": {}
   },
   "projects": {
-    "D:\\myTestProject\\test\\coursesManangementApi\\coursesManangementApi\\coursesManangementApi.csproj": {
+    "D:\\myTestProject\\test\\EduHub\\coursesManangementApi\\coursesManangementApi\\coursesManangementApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\myTestProject\\test\\coursesManangementApi\\coursesManangementApi\\coursesManangementApi.csproj",
+        "projectUniqueName": "D:\\myTestProject\\test\\EduHub\\coursesManangementApi\\coursesManangementApi\\coursesManangementApi.csproj",
         "projectName": "coursesManangementApi",
-        "projectPath": "D:\\myTestProject\\test\\coursesManangementApi\\coursesManangementApi\\coursesManangementApi.csproj",
+        "projectPath": "D:\\myTestProject\\test\\EduHub\\coursesManangementApi\\coursesManangementApi\\coursesManangementApi.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "D:\\myTestProject\\test\\coursesManangementApi\\coursesManangementApi\\obj\\",
+        "outputPath": "D:\\myTestProject\\test\\EduHub\\coursesManangementApi\\coursesManangementApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -51,27 +51,31 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[16.0.0, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
-              "version": "[10.0.0, )"
+              "version": "[10.0.1, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[10.0.0, )"
+              "version": "[10.0.1, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[10.0.0, )"
+              "version": "[10.0.1, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[10.0.0, )"
+              "version": "[10.0.1, )"
             },
             "Scalar.AspNetCore": {
               "target": "Package",
-              "version": "[2.11.0, )"
+              "version": "[2.11.6, )"
             }
           },
           "imports": [

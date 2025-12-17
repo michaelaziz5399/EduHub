@@ -7,8 +7,8 @@ namespace coursesManangementApi.Services
     {
         Task<List<CourseResponse>> GetAllCoursesAsync();
         Task<CourseResponse?> GetByIdAsync(int id);
-        Task<bool> AddCourseAsync(CreateCourseRequest course);
-        Task<bool> UpdateCourseAsync(int id, UpdateCourseRequest course);
+        Task<bool> AddCourseAsync(CreateCourseRequest courseDto);
+        Task<bool> UpdateCourseAsync(int id, UpdateCourseRequest courseDto);
         Task<bool> DeleteCourseAsync(int id);
     }
 }

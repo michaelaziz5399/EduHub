@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
 using coursesManangementApi.Data;
 using coursesManangementApi.Services;
-
+using coursesManangementApi.Mapping;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,8 +14,14 @@ builder.Services.AddOpenApi();
 builder.Services.AddDbContext<AppDbContext>(
     option => { option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")); });
 
+builder.Services.AddAutoMapper(config =>
+{
+    config.AddProfile<MappingProfile>();
+});
+
 
 builder.Services.AddScoped<ICourseRepo, CourseRepo>();
+
 
 var app = builder.Build();
 
